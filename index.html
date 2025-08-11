@@ -1,37 +1,58 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br"> <!-- Define idioma da página como português do Brasil -->
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> <!-- Suporte a caracteres acentuados -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajuste para dispositivos móveis -->
+
+    <!-- Biblioteca para síntese de voz -->
     <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+
+    <!-- Otimização de carregamento de fontes do Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fontes personalizadas: Chakra Petch (títulos) e Inter (texto) -->
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap"
         rel="stylesheet">
+
+    <!-- Arquivo CSS externo -->
     <link rel="stylesheet" href="style.css">
-    <title>JS Game</title>
+
+    <title>JS Game</title> <!-- Título da aba do navegador -->
 </head>
 
 <body>
 
+    <!-- Container principal do jogo -->
     <div class="container">
         <div class="container__conteudo">
+            
+            <!-- Área de informações e interação -->
             <div class="container__informacoes">
+
+                <!-- Título e parágrafo de feedback -->
                 <div class="container__texto">
-                    <h1></h1>
-                    <p class="texto__paragrafo"></p>
+                    <h1></h1> <!-- Título dinâmico do jogo -->
+                    <p class="texto__paragrafo"></p> <!-- Mensagem ou dica do jogo -->
                 </div>
+
+                <!-- Campo para o jogador digitar o palpite -->
                 <input type="number" min="1" max="10" class="container__input">
+
+                <!-- Botões de ação -->
                 <div class="chute container__botoes">
-                    <button onclick="verificarChute()" class="container__botao">Chutar</button>
-                    <button onclick="reiniciarJogo()" id="reiniciar" class="container__botao" disabled>Novo jogo</button>
+                    <button onclick="verificarChute()" class="container__botao">Chutar</button> <!-- Verifica o chute -->
+                    <button onclick="reiniciarJogo()" id="reiniciar" class="container__botao" disabled>Novo jogo</button> <!-- Reinicia o jogo -->
                 </div>
             </div>
+
+            <!-- Imagem ilustrativa do lado direito -->
             <img src="./img/ia.png" alt="Uma pessoa (mulher) olhando para a esquerda" class="container__imagem-pessoa" />
         </div>
     </div>
 
+    <!-- Script principal do jogo -->
     <script src="app.js" defer></script>
 </body>
 
