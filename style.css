@@ -1,77 +1,105 @@
+/* -------------------------------
+   Reset básico e configurações globais
+   ------------------------------- */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    color: white;
+    box-sizing: border-box; /* Inclui bordas e paddings no cálculo total do tamanho */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove paddings padrão */
+    color: white; /* Define cor padrão do texto como branco */
 }
 
+/* -------------------------------
+   Estilização do corpo da página
+   ------------------------------- */
 body {
-    background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%); /* Degradê vertical */
+    height: 100vh; /* Ocupa toda a altura da tela */
+    display: flex; /* Layout flexível */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
 }
 
-
+/* -------------------------------
+   Imagem de fundo semi-transparente
+   ------------------------------- */
 body::before {
-    background-image: url("img/code.png");
-    background-repeat: no-repeat;
-    background-position: right;
-    content: "";
+    background-image: url("img/code.png"); /* Imagem de fundo */
+    background-repeat: no-repeat; /* Evita repetição */
+    background-position: right; /* Alinha imagem à direita */
+    content: ""; /* Necessário para exibir pseudo-elemento */
     display: block;
-    position: absolute;
+    position: absolute; /* Posiciona sobre a tela */
     width: 100%;
     height: 100%;
-    opacity: 0.4;
+    opacity: 0.4; /* Transparência */
 }
 
+/* -------------------------------
+   Container principal
+   ------------------------------- */
 .container {
     width: 80%;
     height: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 24px;
-    border: 1px solid #1875E8;
-    box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
-    background-image: url("img/Ruido.png");
+    border-radius: 24px; /* Bordas arredondadas */
+    border: 1px solid #1875E8; /* Borda azul */
+    box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15); /* Sombra suave */
+    background-image: url("img/Ruido.png"); /* Textura de fundo */
     background-size: 100% 100%;
-    position: relative;
+    position: relative; /* Necessário para posicionamento interno */
 }
 
-
+/* -------------------------------
+   Área de conteúdo do container
+   ------------------------------- */
 .container__conteudo {
     display: flex;
     align-items: center;
     position: absolute;
-    bottom: 0;
+    bottom: 0; /* Alinha na parte inferior */
 }
 
+/* -------------------------------
+   Informações do container
+   ------------------------------- */
 .container__informacoes {
-    flex: 1;
+    flex: 1; /* Ocupa espaço restante */
     padding: 3rem;
 }
 
+/* -------------------------------
+   Botão principal
+   ------------------------------- */
 .container__botao {
     border-radius: 16px;
     background: #1875E8;
     padding: 16px 24px;
-    width: 100%;
+    width: 100%; /* Ocupa largura total */
     font-size: 24px;
     font-weight: 700;
     border: none;
     margin-top: 2rem;
 }
 
+/* -------------------------------
+   Texto genérico
+   ------------------------------- */
 .container__texto {
     margin: 16px 0 16px 0;
 }
 
+/* -------------------------------
+   Texto azul para destaque
+   ------------------------------- */
 .container__texto-azul {
     color: #1875E8;
 }
 
+/* -------------------------------
+   Campo de entrada
+   ------------------------------- */
 .container__input {
     width: 100%;
     height: 72px;
@@ -85,55 +113,78 @@ body::before {
     font-family: 'Inter', sans-serif;
 }
 
+/* -------------------------------
+   Grupo de botões
+   ------------------------------- */
 .container__botoes {
     display: flex;
-    gap: 2em;
+    gap: 2em; /* Espaço entre botões */
 }
 
+/* -------------------------------
+   Títulos
+   ------------------------------- */
 h1 {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 72px;
     padding-bottom: 3rem;
 }
 
+/* -------------------------------
+   Texto e botões padrão
+   ------------------------------- */
 p,
 button {
     font-family: 'Inter', sans-serif;
 }
 
+/* -------------------------------
+   Parágrafo com texto maior
+   ------------------------------- */
 .texto__paragrafo {
     font-size: 32px;
     font-weight: 400;
 }
 
+/* -------------------------------
+   Botão desativado
+   ------------------------------- */
 button:disabled {
     background-color: gray;
 }
 
+/* -------------------------------
+   Estilos responsivos
+   ------------------------------- */
 @media screen and (max-width: 1250px) {
 
+    /* Reduz tamanho do título */
     h1 {
         font-size: 50px;
     }
 
+    /* Reduz tamanho do botão */
     .container__botao {
         font-size: 16px;
     }
 
-
+    /* Reduz tamanho do texto */
     .texto__paragrafo {
         font-size: 24px;
     }
 
+    /* Remove imagem lateral em telas menores */
     .container__imagem-pessoa {
         display: none;
     }
 
+    /* Ajusta posicionamento do conteúdo */
     .container__conteudo {
         display: block;
         position: inherit;
     }
 
+    /* Reduz padding interno */
     .container__informacoes {
         padding: 1rem
     }
